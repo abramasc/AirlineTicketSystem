@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Info</title>
+    <style>
+        .header {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 20px;
+        }
+        .header::before,
+        .header::after,
+        .bottom-border {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 2px;
+            background-color: black;
+        }
+        .header::before {
+            top: 0;
+        }
+        .header::after {
+            bottom: 0;
+        }
+        .bottom-border {
+            bottom: 150px;
+        }
+        .back-button {
+            position: absolute;
+            top: 30px;
+            left: max(10px, calc(50% - 400px));
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .flight-seats {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 24px;
+            padding: 20px;
+            text-decoration: underline;
+        }
+        .payment-inputs {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .input-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            width: 400px;
+        }
+        .input-label {
+            font-size: 18px;
+            margin-right: 10px;
+            text-align: right;
+            width: 150px;
+        }
+        .input-box {
+            padding: 10px;
+            width: 200px;
+            font-size: 16px;
+        }
+        .total-cost {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        .pay-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            width: 120px;
+            cursor: pointer;
+        }
+        .call-worker-button {
+            position: absolute;
+            bottom: 100px;
+            right: max(10px, calc(50% - 400px));
+            font-size: 18px;
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="header">Payment Info</div>
+        <button class="back-button">BACK</button>
+        <div class="flight-seats">Flight Code: ABC</div>
+        <div class="payment-inputs">
+            <div class="input-row">
+                <span class="input-label">Card Number:</span>
+                <input type="text" class="input-box" id="card-number">
+            </div>
+            <div class="input-row">
+                <span class="input-label">Expiration Date:</span>
+                <input type="text" class="input-box" id="expiration-date">
+            </div>
+            <div class="input-row">
+                <span class="input-label">Security Number:</span>
+                <input type="text" class="input-box" id="security-number">
+            </div>
+            <div class="total-cost">Total Cost: $500.00</div>
+            <button class="pay-button" id="pay-btn">Pay</button>
+        </div>
+        <div class="bottom-border"></div>
+        <button class="call-worker-button">Call Worker</button>
+    </div>
+    <script>
+        document.getElementById('pay-btn').addEventListener('click', function() {
+            const cardNumber = document.getElementById('card-number').value;
+            const expirationDate = document.getElementById('expiration-date').value;
+            const securityNumber = document.getElementById('security-number').value;
+
+            if (cardNumber === '000' && expirationDate === '3/10/2029' && securityNumber === '123') {
+                window.location.href = 'FlightPayment.html';
+            }
+        });
+    </script>
+</body>
+</html>

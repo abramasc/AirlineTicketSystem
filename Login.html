@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        .login-container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 200px;
+        }
+        .header {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 20px;
+        }
+        .header::before,
+        .header::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 2px;
+            background-color: black;
+        }
+        .header::before {
+            top: 0;
+        }
+        .header::after {
+            bottom: 0;
+        }
+        .textbox {
+            display: block;
+            margin: 10px auto;
+            padding: 8px;
+            width: 200px;
+        }
+        .button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            width: 150px;
+            cursor: pointer;
+        }
+        .login-button {
+            position: relative;
+        }
+        .login-button::after {
+            content: '';
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 2px;
+            background-color: black;
+        }
+        .error-message {
+            position: absolute;
+            right: 20%;
+            top: 50%;
+            color: red;
+            font-size: 18px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="header">Login</div>
+        <input type="email" class="textbox" placeholder="Email" id="email">
+        <input type="password" class="textbox" placeholder="Password" id="password">
+        <button class="button" id="create-account-btn">Create Account</button>
+        <button class="button login-button" id="login-btn">Login</button>
+        <span class="error-message" id="error-message">Try Again</span>
+    </div>
+    <script>
+        document.getElementById('login-btn').addEventListener('click', function() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (email === 'abramasc@iu.edu' && password === '123') {
+                window.location.href = 'Seats.html';
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        });
+
+        document.getElementById('create-account-btn').addEventListener('click', function() {
+            window.location.href = 'CreateAccount.html';
+        });
+    </script>
+</body>
+</html>

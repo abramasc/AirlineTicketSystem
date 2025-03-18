@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeatsCost</title>
+    <style>
+        .header {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 20px;
+        }
+        .header::before,
+        .header::after,
+        .bottom-border {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 2px;
+            background-color: black;
+        }
+        .header::before {
+            top: 0;
+        }
+        .header::after {
+            bottom: 0;
+        }
+        .bottom-border {
+            bottom: 150px;
+        }
+        .back-button {
+            position: absolute;
+            top: 30px;
+            left: max(10px, calc(50% - 400px));
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .flight-seats {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 24px;
+            padding: 20px;
+            text-decoration: underline;
+        }
+        .seat-options {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .cost-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 25px auto;
+            width: 300px;
+        }
+        .cost-label {
+            font-size: 18px;
+            margin-right: 10px;
+            text-align: right;
+            width: 100px;
+            transform: translateX(-10px);
+        }
+        .cost-button {
+            padding: 10px 20px;
+            width: 120px;
+            cursor: pointer;
+        }
+        .call-worker-button {
+            position: absolute;
+            bottom: 100px;
+            right: max(10px, calc(50% - 400px));
+            font-size: 18px;
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="header">Seats Cost</div>
+        <button class="back-button">BACK</button>
+        <div class="flight-seats">Flights Seats</div>
+        <div class="seat-options">
+            <div class="cost-row">
+                <span class="cost-label">Economy:</span>
+                <button class="cost-button" onclick="window.location.href='Payment.html'">$500.00</button>
+            </div>
+            <div class="cost-row">
+                <span class="cost-label">First Class:</span>
+                <button class="cost-button">$1000.00</button>
+            </div>
+            <div class="cost-row">
+                <span class="cost-label">Window:</span>
+                <button class="cost-button">$550.00</button>
+            </div>
+            <div class="cost-row">
+                <span class="cost-label">Aisle:</span>
+                <button class="cost-button">$570.00</button>
+            </div>
+        </div>
+        <div class="bottom-border"></div>
+        <button class="call-worker-button">Call Worker</button>
+    </div>
+</body>
+</html>
